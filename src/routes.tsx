@@ -3,6 +3,8 @@ import HomePage from "./pages/home";
 import LoginPage from "./pages/auth/login";
 import RegisterPage from "./pages/auth/register";
 import ForgotPasswordPage from "./pages/auth/forgot-password";
+import DashbordPage from "./pages/dashboard";
+import DashboardLayout from "./components/dashboard";
 
 export const routes: RouteObject[] = [
     {
@@ -14,8 +16,9 @@ export const routes: RouteObject[] = [
             { path: "/forgot-password", element: <ForgotPasswordPage /> },
             {
                 path: "/dashboard",
+                Component: DashboardLayout,
                 children: [
-                    
+                    { path: "/dashboard", element: <DashbordPage /> }
                 ]
             }
         ],
